@@ -1,11 +1,15 @@
 import dynamic from 'next/dynamic';
 
-// 클라이언트에서만 렌더링
+// 올바른 경로로 수정
 const TaxManagementApp = dynamic(
-  () => import('../assets/index-DCgDFyKC.js'),
+  () => import('../assets/index-DCgDFyKC'),  // .js 제거
   { 
     ssr: false,
-    loading: () => <div>로딩 중...</div>
+    loading: () => (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl">Water TT 시스템 로딩 중...</div>
+      </div>
+    )
   }
 );
 
