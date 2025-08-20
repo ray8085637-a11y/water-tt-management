@@ -1,9 +1,14 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  swcMinify: false,
   experimental: {
     esmExternals: false
+  },
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      document: false,
+      window: false
+    };
+    return config;
   }
 }
 
