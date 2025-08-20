@@ -1,8 +1,7 @@
 import dynamic from 'next/dynamic';
 
-// 올바른 경로로 수정
 const TaxManagementApp = dynamic(
-  () => import('../assets/index-DCgDFyKC'),  // .js 제거
+  () => import('../assets/index-DCgDFyKC.js'),  // .js 추가
   { 
     ssr: false,
     loading: () => (
